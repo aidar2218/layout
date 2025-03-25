@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <link rel="stylesheet" href="./styles.css">
-   <title>Title</title>
+   <title>Registration Form</title>
 </head>
 <body>
 <h1>Registration Form</h1>
@@ -12,23 +12,56 @@
    <fieldset>
       <label for="first-name">
          Enter Your First Name: <input id="first-name"
-                                       type="text"/>
+                                       type="text"
+                                       required/>
       </label>
       <label for="last-name">
          Enter Your Last Name: <input id="last-name"
-                                      type="text"/>
+                                      type="text"
+                                      required/>
       </label>
       <label for="email">
          Enter Your Email: <input id="email"
-                                  type="email"/>
+                                  type="email"
+                                  required/>
       </label>
       <label for="new-password">
          Create a New Password: <input id="new-password"
-                                       type="password"/>
+                                       type="password"
+                                       pattern="[a-z0-5]{8,}"
+                                       required/>
       </label>
    </fieldset>
-   <fieldset></fieldset>
-   <fieldset></fieldset>
+   <fieldset>
+      <legend>Account type (required)</legend>
+      <label for="personal-account">
+         <input type="radio"
+                name="account-type"
+                id="personal-account"
+                checked/> Personal
+      </label>
+      <label for="business-account">
+         <input type="radio"
+                name="account-type"
+                id="business-account"/> Business
+      </label>
+   </fieldset>
+   <fieldset>
+      <label>
+         Upload a profile picture: <input type="file">
+      </label>
+      <label>
+         Input your age (years): <input type="number"
+                                        min="13"
+                                        max="120">
+      </label>
+   </fieldset>
+   <label for="terms-and-conditions">
+      <input type="checkbox"
+             id="terms-and-conditions"
+             required/>
+      I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+   </label>
    <input type="submit" value="Submit"/>
 </form>
 </body>
